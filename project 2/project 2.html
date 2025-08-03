@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Physics Lab Simulator</title>
+  <link rel="stylesheet" href="./project 2.css">
+</head>
+<body>
+
+  <header>
+    <h1>Physics Lab Simulator</h1>
+    <p>Interactive mockup for virtual experiments</p>
+  </header>
+
+  <main>
+    <section class="experiment">
+      <h2>Ohm’s Law</h2>
+      <p>Simulate how voltage, current, and resistance relate: V = IR</p>
+      <div class="lab-box">
+        <label>Voltage (V): <input id="voltage" type="number" placeholder="Enter voltage"></label>
+        <label>Resistance (Ω): <input id="resistance" type="number" placeholder="Enter resistance"></label>
+        <button id="calcBtn">Calculate</button>
+        <p><strong>Output:</strong> <span id="output">Current = V / R</span></p>
+      </div>
+    </section>
+
+    <section class="experiment">
+      <h2>Lens Simulation</h2>
+      <p>Visualize how convex and concave lenses bend light rays</p>
+      <div class="lab-box">
+        <p><div Image3="image/imaage 3
+          "></div></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Physics Lab Simulator | Joseph Mutinda</p>
+
+  <footer>
+    <p>&copy; 2025 Physics Lab Simulator | Joseph Mutinda</p>
+  </footer>
+
+  <script>
+    // Ohm's Law Calculator
+    document.getElementById('calcBtn').addEventListener('click', function() {
+      const voltage = parseFloat(document.getElementById('voltage').value);
+      const resistance = parseFloat(document.getElementById('resistance').value);
+      const output = document.getElementById('output');
+      if (isNaN(voltage) || isNaN(resistance) || resistance === 0) {
+        output.textContent = 'Please enter valid numbers (R ≠ 0)';
+      } else {
+        const current = voltage / resistance;
+        output.textContent = `Current = ${current.toFixed(2)} A`;
+      }
+    });
+  </script>
+</html>
